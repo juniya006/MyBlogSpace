@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- <div class="register-page"> -->
+
+<div class="register-container">
+
+    <h1>Create an Account</h1>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <label>Username</label>
+        <input type="text" name="username" placeholder="Enter username">
+
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter email">
+
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter password">
+
+        <label>Confirm Password</label>
+        <input type="password" name="confirm_password" placeholder="Confirm password">
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p class="login-text">
+        Already have an account?
+        <a href="/login/">Login</a>
+    </p>
+
+</div>
+
+{% endblock %}
+    

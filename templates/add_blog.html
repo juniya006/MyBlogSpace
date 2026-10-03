@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="add-blog-page">
+
+    <div class="add-blog-container">
+
+        <h1>Add New Blog</h1>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <label>Title</label>
+            <input
+                type="text"
+                name="title"
+                placeholder="Enter blog title"
+                required
+            >
+
+            <label>Content</label>
+            <textarea
+                name="content"
+                placeholder="Write your blog content here..."
+                required
+            ></textarea>
+
+            <label>Image</label>
+            <input type="file" name="image">
+
+            <button type="submit">Add Blog</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
